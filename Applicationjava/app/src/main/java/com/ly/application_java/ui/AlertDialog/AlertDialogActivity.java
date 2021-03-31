@@ -5,7 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ly.application_java.R;
@@ -101,6 +105,48 @@ public class AlertDialogActivity extends AppCompatActivity {
                         })
                         .create();
                 alertDialog.show();
+                break;
+
+            case R.id.button5:
+                builder = new AlertDialog.Builder(this);
+                builder.setTitle("提示");
+                builder.setMessage("message");
+                builder.setPositiveButton("sure", (di, which) -> di.dismiss());
+                TextView title = new TextView(this);
+                title.setText("hello");
+                title.setPadding(10, 10, 10, 10);
+                title.setTextSize(18);
+                title.setGravity(Gravity.CENTER);
+                title.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                builder.setCustomTitle(title);
+                alertDialog = builder.create();
+                alertDialog.show();
+
+                //必须在show()之后才能获取到button
+                Button button = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) button.getLayoutParams();
+                layoutParams.width = LinearLayout.LayoutParams.MATCH_PARENT;
+                layoutParams.height = LinearLayout.LayoutParams.WRAP_CONTENT;
+                layoutParams.gravity = Gravity.CENTER;
+
+                button.setBackgroundColor(getResources().getColor(android.R.color.holo_red_dark));
+                button.setTextColor(getResources().getColor(android.R.color.white));
+                button.setTextSize(16);
+                button.setText("change");
+                button.setLayoutParams(layoutParams);
+                break;
+
+            case R.id.button6:
+                // 自定义弹窗
+                builder = new AlertDialog.Builder(this);
+
+                View alert_view = getLayoutInflater().inflate(R.layout.alert_custom,null,false);
+                builder.setView(alert_view);
+                alertDialog = builder.create();
+                alertDialog.show();
+//                改变宽度
+//                alertDialog.getWindow().setLayout(200,LinearLayout.LayoutParams.WRAP_CONTENT);
+
                 break;
         }
 
