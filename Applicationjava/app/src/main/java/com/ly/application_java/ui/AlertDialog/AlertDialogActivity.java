@@ -24,7 +24,7 @@ public class AlertDialogActivity extends AppCompatActivity {
 
     public void buttonClick(View view) {
 
-        AlertDialog alertDialog = null;
+        AlertDialog alertDialog;
         AlertDialog.Builder builder = null;
         int mId = view.getId();
         switch (mId) {
@@ -121,7 +121,6 @@ public class AlertDialogActivity extends AppCompatActivity {
                 builder.setCustomTitle(title);
                 alertDialog = builder.create();
                 alertDialog.show();
-
                 //必须在show()之后才能获取到button
                 Button button = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
                 LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) button.getLayoutParams();
@@ -139,14 +138,27 @@ public class AlertDialogActivity extends AppCompatActivity {
             case R.id.button6:
                 // 自定义弹窗
                 builder = new AlertDialog.Builder(this);
-
                 View alert_view = getLayoutInflater().inflate(R.layout.alert_custom,null,false);
-                builder.setView(alert_view);
+                builder.setView(alert_view);//show 之前设置
                 alertDialog = builder.create();
                 alertDialog.show();
 //                改变宽度
 //                alertDialog.getWindow().setLayout(200,LinearLayout.LayoutParams.WRAP_CONTENT);
 
+//                alertDialog = new AlertDialog.Builder(this)
+//                        .setTitle("hhh")
+//                        .setPositiveButton("sure", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//
+//                            }
+//                        })
+//                        .create();
+//
+//                alertDialog.show();
+                //在show之后设置
+//                alertDialog.setContentView(R.layout.alert_custom);
+//                alertDialog.setContentView(alert_view);
                 break;
         }
 

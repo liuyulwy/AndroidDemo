@@ -21,6 +21,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ly.application_java.R;
 import com.ly.application_java.ui.AlertDialog.AlertDialogActivity;
+import com.ly.application_java.ui.AlertDialog.DialogFragmentActivity;
+import com.ly.application_java.ui.AlertDialog.ProgressDialogActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,8 +62,10 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
 
-        ArrayList data = new ArrayList<Info>();
+        ArrayList<Info> data = new ArrayList<Info>();
         data.add(new Info("AlertDialog", "AlertDialogActivity"));
+        data.add(new Info("ProgressDialog", "ProgressDialogActivity"));
+        data.add(new Info("DialogFragment", "DialogFragmentActivity"));
 
 
         RecyclerView rv = root.findViewById(R.id.rv_list);
@@ -83,9 +87,18 @@ public class HomeFragment extends Fragment {
         adapter.setItemClickListener(new ItemClickListener() {
             @Override
             public void onItemClick(int p) {
-//                Toast.makeText(getContext(), "postion:" + p, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getContext(), AlertDialogActivity.class);
-                getActivity().startActivity(intent);
+                if (p == 0){
+                    Intent intent = new Intent(getContext(), AlertDialogActivity.class);
+                    getActivity().startActivity(intent);
+                }else if (p == 1){
+                    Intent intent = new Intent(getContext(), ProgressDialogActivity.class);
+                    getActivity().startActivity(intent);
+                }
+                else if (p == 2){
+                    Intent intent = new Intent(getContext(), DialogFragmentActivity.class);
+                    getActivity().startActivity(intent);
+                }
+
             }
         });
         return root;
