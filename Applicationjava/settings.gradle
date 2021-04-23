@@ -1,2 +1,5 @@
+include ':myactivity'
+include ':myactivity'
+include ':myfragment'
 include ':app'
 rootProject.name = "Application-java"
