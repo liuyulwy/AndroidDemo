@@ -1,3 +1,4 @@
+include ':mydrawable'
 include ':myactivity'
 include ':myactivity'
 include ':myfragment'
