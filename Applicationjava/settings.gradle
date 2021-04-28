@@ -1,5 +1,6 @@
 include ':myviewpager'
 include ':myviewpager'
+include ':mytablayout'
 include ':mydrawable'
 include ':myactivity'
 include ':myactivity'

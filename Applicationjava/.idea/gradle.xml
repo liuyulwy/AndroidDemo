@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/mydrawable" />
             <option value="$PROJECT_DIR$/myfragment" />
             <option value="$PROJECT_DIR$/myviewpager" />
+            <option value="$PROJECT_DIR$/mytablayout" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

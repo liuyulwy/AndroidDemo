@@ -1,4 +1,4 @@
-package com.ly.myviewpager;
+package com.example.mytablayout;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,22 +14,26 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link CFragment#newInstance} factory method to
+ * Use the {@link BlankFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CFragment extends Fragment {
+public class BlankFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private static final String TAG = "CFragment";
+    private static final String TAG = "BlankFragment";
+
+    private boolean isFirst = true;
+
+    private int num = 0;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    public CFragment() {
+    public BlankFragment() {
         // Required empty public constructor
     }
 
@@ -39,11 +43,11 @@ public class CFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment CFragment.
+     * @return A new instance of fragment BlankFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static CFragment newInstance(String param1, String param2) {
-        CFragment fragment = new CFragment();
+    public static BlankFragment newInstance(String param1, String param2) {
+        BlankFragment fragment = new BlankFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -54,6 +58,7 @@ public class CFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onResume: " + num);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -64,7 +69,7 @@ public class CFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_c, container, false);
+        return inflater.inflate(R.layout.fragment_blank, container, false);
     }
 
     @Override
@@ -102,13 +107,14 @@ public class CFragment extends Fragment {
     public void onResume() {
         super.onResume();
         Log.d(TAG, "onResume: ");
-
-//        if (isFirst){
-//            Log.d(TAG, "onResume: " + "first = true");
-//            isFirst = false;
-//        }else {
-//            Log.d(TAG, "onResume: " + "first = false");
-//        }
+        num++;
+        Log.d(TAG, "onResume: " + num);
+        if (isFirst){
+            Log.d(TAG, "onResume: " + "first = true");
+            isFirst = false;
+        }else {
+            Log.d(TAG, "onResume: " + "first = false");
+        }
     }
 
     @Override
@@ -140,4 +146,5 @@ public class CFragment extends Fragment {
         super.onDetach();
         Log.d(TAG, "onDetach: ");
     }
+
 }

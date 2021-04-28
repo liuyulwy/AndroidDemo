@@ -1,13 +1,10 @@
-package com.ly.myactivity;
+package com.example.mytablayout;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTabHost;
 
-import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TabHost;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,13 +12,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
     }
 
-    public void btnClick(View view) {
+    public void buttonClick(View view) {
         int id = view.getId();
-        if (id == R.id.life_circle){
+        if (id == R.id.tab_layout){
             Intent intent = new Intent(this,MainActivity2.class);
+            startActivity(intent);
+        }else if(id == R.id.tab_layout1){
+            Intent intent = new Intent(this,MainActivity3.class);
+            startActivity(intent);
+        }else if(id == R.id.tab_layout2){
+            Intent intent = new Intent(this,MainActivity4.class);
             startActivity(intent);
         }
     }

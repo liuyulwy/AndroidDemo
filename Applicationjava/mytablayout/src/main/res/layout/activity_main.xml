@@ -4,26 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:orientation="vertical"
-    >
+    tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/viewpager1"
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:onClick="itemClick"
-        android:text="viewpager"/>
+        android:onClick="buttonClick"
+        android:text="tablayout"/>
+
     <Button
-        android:id="@+id/viewpager2"
+        android:id="@+id/tab_layout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:onClick="itemClick"
-        android:text="viewpager2"/>
+        android:onClick="buttonClick"
+        android:text="tablayout + fragment + viewpager"/>
 
-
-
+    <Button
+        android:id="@+id/tab_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:onClick="buttonClick"
+        android:text="tablayout + fragment + viewpager2"/>
 
 </LinearLayout>
