@@ -15,8 +15,9 @@
             <option value="$PROJECT_DIR$/myactivity" />
             <option value="$PROJECT_DIR$/mydrawable" />
             <option value="$PROJECT_DIR$/myfragment" />
-            <option value="$PROJECT_DIR$/myviewpager" />
             <option value="$PROJECT_DIR$/mytablayout" />
+            <option value="$PROJECT_DIR$/myview" />
+            <option value="$PROJECT_DIR$/myviewpager" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    定义属性-->
+    <declare-styleable name="CustomView">
+        <attr name="t1" format="string"/>
+        <attr name="t2" format="string"/>
+        <attr name="t3" format="string"/>
+        <attr name="t4" format="string"/>
+        <attr name="t5" format="string"/>
+        <attr name="style_defStyleAttr" format="reference"/>
+        <attr name="style_defStyleRes" format="reference"/>
+    </declare-styleable>
+
+<!--    在xml中使用自定义style-->
+    <style name="my_custom_view_style">
+        <item name="t1">test in my_custom_view_style</item>
+        <item name="t2">test in my_custom_view_style</item>
+    </style>
+
+<!--     用来表示 defStyleRes-->
+    <style name="style_defStyleRes">
+        <item name="t1">test in style_defStyleRes</item>
+        <item name="t2">test in style_defStyleRes</item>
+        <item name="t3">test in style_defStyleRes</item>
+        <item name="t4">test in style_defStyleRes</item>
+    </style>
+
+    <!-- 用来表示 defStyleAttr 这个属性的值 -->
+    <style name="style_defStyleAttr">
+        <item name="t1">test in style_defStyleAttr</item>
+        <item name="t2">test in style_defStyleAttr</item>
+        <item name="t3">test in style_defStyleAttr</item>
+    </style>
+
+</resources>
