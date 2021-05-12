@@ -1,2 +1,3 @@
+include ':mylifecycle'
 include ':app'
 rootProject.name = "MyApplication-kotilin"

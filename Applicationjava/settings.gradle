@@ -1,3 +1,5 @@
+include ':mylifecycle'
+include ':myrecyclerview'
 include ':myenvent'
 include ':myview'
 include ':myviewpager'
