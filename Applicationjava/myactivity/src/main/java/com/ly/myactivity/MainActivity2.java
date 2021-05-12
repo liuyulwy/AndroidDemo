@@ -17,6 +17,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     private static final String TAG = "MainActivity2";
     private EditText et;
+    private String test = "123";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,7 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.d(TAG, "onResume: ");
+        Log.d(TAG, "onResume: " + test);
     }
 
     @Override
@@ -105,6 +107,7 @@ public class MainActivity2 extends AppCompatActivity {
         Log.d(TAG, "onSaveInstanceState: ");
         outState.putString("key","value");
         outState.putString("text",et.getText().toString());
+        test = et.getText().toString();
     }
 
 //    @Override
