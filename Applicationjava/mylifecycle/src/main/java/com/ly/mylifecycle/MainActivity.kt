@@ -19,6 +19,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this,MainActivity2::class.java))
         }else if(id == R.id.button2){
             startActivity(Intent(this,MainActivity3::class.java))
+        }else if(id == R.id.button3){
+            startActivity(Intent(this,MainActivity4::class.java))
+        }else if(id == R.id.button4){
+            startActivity(Intent(this,MainActivity5::class.java))
+        }else if(id == R.id.button5){
+            startActivity(Intent(this,MainActivity6::class.java))
         }
     }
 }
